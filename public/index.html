@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Time Chat</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>Real-Time Chat</h1>
+        <div class="user-controls hidden" id="userControls">
+          <span class="user-label">Logged in as</span>
+          <span class="current-user" id="currentUserDisplay"></span>
+          <button type="button" class="logout-button" id="logoutButton">
+            Logout
+          </button>
+        </div>
+      </header>
+      <main class="chat">
+        <section class="messages" id="messages"></section>
+        <form class="input" id="messageForm">
+          <input
+            id="messageInput"
+            type="text"
+            placeholder="Type your message..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Send</button>
+        </form>
+      </main>
+      <aside class="sidebar" id="participants">
+        <h2>Participants</h2>
+        <ul id="participantsList"></ul>
+      </aside>
+    </div>
+
+    <div class="modal" id="usernameModal">
+      <div class="modal-content">
+        <h2>Join the chat</h2>
+        <form id="usernameForm">
+          <input
+            id="nameInput"
+            type="text"
+            placeholder="Your name"
+            maxlength="40"
+            autocomplete="name"
+            required
+          />
+          <input
+            id="emailInput"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+          <button type="submit">Join Chat</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>
