@@ -373,7 +373,10 @@ body {
 
   .chat {
     border-radius: 1.25rem;
-    min-height: 420px;
+    min-height: 0;
+    max-height: none;
+    height: auto;
+    overflow: visible;
   }
 
   .sidebar {
@@ -389,11 +392,18 @@ body {
   .input {
     padding: 1rem 1.25rem;
     flex-direction: column;
+    position: static;
+    background: transparent;
+    border-top: none;
   }
 
   .input input,
   .input button {
     width: 100%;
+  }
+
+  .input button {
+    margin-top: 0.6rem;
   }
 }
 
@@ -421,6 +431,7 @@ body {
 
   .input {
     padding: 0.9rem 1rem;
+    position: static;
   }
 
   .message {
